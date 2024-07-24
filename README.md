@@ -1,82 +1,59 @@
-# BigGAN-Capstone-Project-Deliverables
-This is the Hamoye Spring 2024 BigGAN Capstone data cleaning datasets, visualizations, target variables, modeling and deployment repository.
+# Project Title: Electricity Demand and Supply Gap Prediction Model
 
-USING GENERATIVE AI TO FORECAST ELECTRICITY DEMAND AND SUPPLY GAPS: SUB-SAHARAN AFRICA VS. OTHER CONTINENT REGIONS
-BigGAN Capstone Project Proposal, Spring ‘24 Cohort
+## Overview
+This project aims to predict electricity access and demand gaps using a neural network model, deployed as a web application through Flask and Render. The project involves several key stages: data collection, preprocessing, feature engineering, model training, evaluation, and deployment, providing an interactive interface for users to input data and receive predictions.
 
-Arthur Uzoma ⭐
+## Project Structure
+- *data/*: Contains the dataset used for training the model.
+- *app.py*: The Flask application that serves the model and handles user requests.
+- *templates/*: Contains HTML files for the user interface.
+  - *index.html*: The main page where users can input data and see predictions.
+- *static/*: Contains static files like CSS and JavaScript (if any).
+- *model/*: Contains the trained model files (if applicable).
 
-Somi Fredrick 🌟
+## Data Collection
+The dataset was collected from reliable sources providing data on various factors affecting electricity access and demand, including urban and rural electricity access, population metrics, financial support, energy sources, and socio-economic indicators.
 
-Abosede Omishade
+## Data Preparation
+1. *Data Loading*: The dataset is loaded, and key features are selected for the prediction model.
+2. *Data Cleaning*: Missing values in the selected features are handled to ensure the dataset is complete and ready for modeling.
+3. *Feature Scaling*: The data is standardized using StandardScaler to ensure that all features contribute equally to the model's performance.
+4. *Train-Test Split*: The data is split into training and testing sets using train_test_split to evaluate the model's performance on unseen data.
 
-Nina Garmash
+## Feature Engineering
+1. *Feature Selection*: Relevant features impacting electricity access and demand are selected based on domain knowledge and exploratory data analysis.
+2. *Encoding Categorical Features*: Categorical features are converted to numerical representations using one-hot encoding (if applicable).
+3. *Handling Target Variable*: The target variable, gap, is transformed to ensure non-negative values if negative gaps do not make sense in the context.
 
-Nishant Katiyar
+## Model Training
+1. *Model Definition*: 
+   - An LSTM (Long Short-Term Memory) model is defined for capturing temporal dependencies in the data.
+   - An alternative Feedforward Neural Network (FNN) model with dense layers and dropout regularization is also defined using TensorFlow and Keras.
+2. *Model Compilation*: The model is compiled with the Adam optimizer and mean squared error loss function.
+3. *Model Training*: The model is trained on the training set and validated on the test set for 100 epochs to ensure robustness and accuracy.
+4. *Model Evaluation*: The model is evaluated on training and test sets to ensure it generalizes well to new data.
+5. *Model Prediction*: The model makes predictions on both training and test sets, combining true values and predicted values for comprehensive evaluation.
+6. *Performance Metrics*: The root mean squared error (RMSE) and mean absolute error (MAE) are calculated for detailed model performance assessment.
 
-Bharat Kumar Jhawar
+## Deployment
+1. *Flask Application*: A Flask application is created to serve the model and handle user inputs.
+2. *HTML Template*: An HTML file (index.html) is designed to provide a user interface for input and output.
+3. *Render Deployment*: 
+   - The application is pushed to GitHub.
+   - A Render account is created, and a new web service is set up.
+   - The GitHub repository is linked to Render.
+   - Environment variables are configured, and the service is deployed, making the application live.
 
-Adeniyi Olaolu
+    
 
-Arnab Das
+## Usage
+1. Open a web browser and go to : https://elec-deploy.onrender.com/predict
 
-Sayantani Jana
 
-Emmanuel Alafaa
 
-Tolulope Oke
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-Ademo Vitalis
-
-Abiodun Onifade
-
-Oluchukwu Okorie
-
-1. Introduction
-Access to electricity is crucial for economic growth and social development. Yet in Sub-Saharan Africa (SSA), around 600 million people still need access to it, hindering the achievement of Sustainable Development Goal (SDG) 7, which targets universal access to modern energy by 2030.
-
-To tackle this, the project aims to develop a generative AI model to predict electrification demand and supply gaps in SSA against other continent regions by understanding the factors influencing income group, region, access to alternative energy sources, balance values, and electricity rate and leveraging complex data patterns to provide actionable insights for improved planning and decision-making.
-
-2. Existing work and References:
-The previous cohort worked on developing a Global household predictive model specifically focusing on OECD countries. Their model predicts the Low, Medium, or High levels of electricity consumption by electricity access rate in the rural population(the most important feature), rural and urban population, year, and location. Another cohort worked on Predictive Modeling of Electricity Access in Africa, it analyzed historical trends relative to region and income across African countries and projected electricity access levels until 2030 (World Bank data). Two more groups focused on Predicting Future Electrification Needs using data from different datasets (Harvard Dataverse and World Bank).
-
-Also, Forecasting Electrification Needs in Africa: A Multiscale Approach by Abigail B. McCoy, Jason L. Cohen, and Peter B. Lunt(2020). This research employs a multiscale modeling approach to forecast future African electrification needs. The authors combined macroeconomic trends with local-level data to create detailed electricity demand projections across different regions.
-
-3. Problem Statement:
-Despite significant efforts to improve electricity access, Sub-Saharan Africa (SSA) remains critically underserved. As of 2019, the number of people without access increased to 570 million, up from 556 million in 2010, highlighting a persistent and growing electrification gap. The issue of electricity in SSA is not just a demand issue; it is also a supply issue. Addressing this requires a comprehensive approach that includes predicting the demand/supply gap and comparing this metric against other regions of the world. This would provide insights into where the need is greatest and inform targeted interventions. Additionally, comparing these gaps to other continents or specific countries where electrification supply is not as critical can offer valuable lessons and strategies that could be adapted to the SSA context. There is a need for a generative AI model capable of accurately forecasting electrification demand, supply, and the resulting gap to guide effective and sustainable energy access interventions in SSA.
-
-4. Objectives:
-Comparative Analysis: Conduct a comparative analysis of the electrification gaps within SSA regions and between SSA and other continent regions or specific countries with higher electrification rates to extract valuable insights and strategies.
-Guiding Interventions: Provide data-driven insights to guide targeted and effective interventions for improving sustainable energy access in SSA, considering both demand and supply gap factors.
-Develop a Generative AI Model: create a robust Generative AI model to accurately forecast the electricity demand, supply, and resulting gap for SSA. This model will incorporate socio-economic, environmental, and technological factors to provide reliable predictions and actionable insights for improving electricity access and resource allocation in SSA.
-Predict Demand/Supply Gap: Utilize machine learning techniques to forecast the electricity demand and supply gap for Sub-Saharan Africa. This approach will integrate socio-economic, environmental, and technological factors to predict areas with the highest needs and improve electricity access and resource planning.
-Dynamic Adaptation: Ensure the AI model can dynamically adapt to new data inputs to continuously refine predictions and intervention strategies over time.
-5. Methodology
-5.1 Dataset:
-Global Electrification Database by Harvard Dataverse - dataset.xhtml.
-The World Bank data - Access to electricity (% of the population) and more - EG.ELC.ACCS.ZS.
-World Energy Statistics and Balances IAE 50 - world-energy-statistics-and-balances.
-TRACKING SDG 7 - The Energy Progress Report.
-Electricity Production By Source (World), Kaggle.
-5.2 Model Development
-Data Preprocessing: Cleaning, normalizing, and integrating the datasets to create a comprehensive data repository.
-Feature Selection: Identifying key features influencing electrification demand and supply using techniques like principal component analysis (PCA).
-Model Training: Developing a generative AI model using techniques such as Variational Autoencoders (VAEs) or Generative Adversarial Networks (GANs) to generate predictive scenarios.
-Validation and Testing: Using a portion of the data for validation and testing to ensure model accuracy. We will employ techniques like k-fold cross-validation to assess performance and prevent overfitting.
-5.3 Model Deployment
-Scenario Analysis: Generating multiple demand and supply scenarios to explore different future possibilities.
-Interactive Dashboard: Creating a user-friendly interface to visualize predictions and facilitate scenario exploration.
-Feedback Loop: Implementing a system to continuously update the model with new data for ongoing improvement.
-6. Expected Outcomes
-Accurate Forecasting: Develop a generative AI model to predict the electricity demand and supply gap for Sub-Saharan Africa (SSA). The model will consider economic indicators, population growth, weather patterns, and access to alternative energy sources for comprehensive forecasting.
-Identification of Key Drivers: Generate insights into the primary drivers of electricity demand and supply across different regions. This will help to understand the unique challenges and opportunities in Sub-Saharan Africa compared to other continents.
-Strategic Resource Allocation: Provide recommendations for optimizing resource allocation and infrastructure investments to address identified supply gaps efficiently. The insights will support targeted interventions to enhance electricity access where it is most needed.
-Scenario Analysis Tools: Create an interactive tool to simulate various scenarios, allowing stakeholders to explore the impact of different policy decisions, economic conditions, and investment strategies on future electricity demand and supply.
-Policy Recommendations: Offer data-driven policy recommendations to help governments, NGOs, and private sector stakeholders formulate effective strategies to improve electrification rates and manage supply gaps.
-Enhanced Decision-Making: Equip energy planners and decision-makers with robust predictive insights to manage electricity supply more effectively, anticipate future demand, and respond to market dynamics, thereby reducing outages and improving energy reliability.
-Comparative Analysis: Provide a comparative analysis of electrification challenges and solutions in Sub-Saharan Africa versus other continental regions, highlighting best practices and transferable strategies
-7. Conclusion
-In conclusion, implementing generative AI to forecast electricity demand and supply gaps in Sub-Saharan Africa offers a transformative approach to addressing persistent electrification challenges. By delivering precise predictions and comprehensive insights, this project will facilitate strategic planning, inform policy-making, and enable effective resource allocation. Additionally, the project will provide scenario analysis tools and enhance decision-making capabilities, offering a comparative perspective with other regions to transfer best practices and innovative solutions. Ultimately, leveraging generative AI in this context promises to drive sustainable and equitable electrification efforts, contributing to universal energy access and significantly improving socio-economic development across the region.
-
-8. References:
- McCoy, A. B., Cohen, J. L., and Lunt, P. B., (2020). Forecasting Electrification Needs in Africa: A Multiscale Approach.
+## Acknowledgments
+- Thanks to the data providers for the comprehensive dataset.
+- Special thanks to the stakeholders for their continuous support and feedback.
