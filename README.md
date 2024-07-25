@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="hamoye.webp" alt="HamoyeLogo" width="400">
+</p>
+
 # Project Title: Electricity Demand and Supply Gap Prediction Model
 
 ## Overview
