@@ -63,4 +63,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Acknowledgments
 - Thanks to the data providers for the comprehensive dataset.
-- Special thanks to the [Hamoye Organization](https://www.hamoye.com/) for their support and feedback, and the BigGAN 2024 Capstone Project Team](https://github.com/Zaratti/BigGAN-Capstone-Project-Proposal/edit/main/README.md) for the repository continuous improvement efforts.
+- Special thanks to the [Hamoye Organization](https://www.hamoye.com/) for their support and feedback, and the [BigGAN 2024 Capstone Project Team](https://github.com/Zaratti/BigGAN-Capstone-Project-Proposal/edit/main/README.md) for this repository continuous improvement efforts.
