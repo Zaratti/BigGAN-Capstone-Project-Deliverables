@@ -5,7 +5,7 @@
 # Project Title: Electricity Demand and Supply Gap Prediction Model
 
 ## Overview
-This project aims to predict electricity access and demand gaps using a neural network model, deployed as a web application through Flask and Render. The project involves several key stages: data collection, preprocessing, feature engineering, model training, evaluation, and deployment, providing an interactive interface for users to input data and receive predictions.
+This project aims to predict electricity access and demand gaps using a neural network model, deployed as a web application through Flask and Render. The project involves several key stages: data collection, preprocessing, feature engineering, model training, evaluation, and deployment, providing an interactive interface for users to input data and receive predictions. Click here to find the [BigGAN Capstone project proposal document](https://github.com/Zaratti/BigGAN-Capstone-Project-Proposal/edit/main/README.md).
 
 ## Project Structure
 - *data/*: Contains the dataset used for training the model.
@@ -52,6 +52,9 @@ The dataset was collected from reliable sources providing data on various factor
 
 ## Usage
 1. Open a web browser and go to : https://elec-deploy.onrender.com/predict
+2. Find the BigGAN 2024 Capstone Research paper [here](https://github.com/Zaratti/BigGAN-Capstone-Project-Deliverables/blob/main/BigGAN_Capstone_Research_Paper.pdf).
+3. Find the BigGAN 2024 Capstone Documentation Paper [here](https://github.com/Zaratti/BigGAN-Capstone-Project-Proposal/blob/main/BigGAN_Project_Documentation.ipynb) or [here](https://github.com/Zaratti/BigGAN-Capstone-Project-Deliverables/blob/main/BigGAN_Project_Documentation.ipynb).
+4. Find the BigGAN 2024 Capstone Presentation Paper [here](https://github.com/Zaratti/BigGAN-Capstone-Project-Deliverables/blob/main/Hamoye%20BigGAN%20Presentation%20Spring%202024.pdf).
 
 
 
@@ -60,4 +63,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Acknowledgments
 - Thanks to the data providers for the comprehensive dataset.
-- Special thanks to the stakeholders for their continuous support and feedback.
+- Special thanks to the [Hamoye Organization](https://www.hamoye.com/) for their support and feedback, and the BigGAN 2024 Capstone Project Team](https://github.com/Zaratti/BigGAN-Capstone-Project-Proposal/edit/main/README.md) for the repository continuous improvement efforts.
